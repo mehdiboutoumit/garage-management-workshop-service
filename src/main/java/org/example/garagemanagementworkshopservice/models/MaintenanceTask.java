@@ -18,5 +18,6 @@ public class MaintenanceTask {
     String description;
     String startDate;
     String endDate;
+    Double price;
     String status;
 }
