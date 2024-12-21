@@ -14,10 +14,9 @@ public class MaintenanceTask {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
     String name;
-    int vehiculeId;
+    int vin;
     String description;
     String startDate;
     String endDate;
-    Double price;
     String status;
 }

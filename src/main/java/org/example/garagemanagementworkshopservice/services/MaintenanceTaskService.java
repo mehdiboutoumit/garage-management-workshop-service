@@ -18,4 +18,14 @@ public class MaintenanceTaskService {
     public MaintenanceTask createMaintenanceTask(MaintenanceTask maintenanceTask) {
         return maintenanceRepository.save(maintenanceTask);
     }
+    public MaintenanceTask updateMaintenanceTask(MaintenanceTask maintenanceTask) {
+        // Check if the task exists
+        MaintenanceTask existingTask = maintenanceRepository.findById(maintenanceTask.getId())
+                .orElseThrow(() -> new RuntimeException("Task not found with ID: " + maintenanceTask.getId()));
+
+        existingTask.setStatus("Completed");
+
+        // Save and return the updated task
+        return maintenanceRepository.save(existingTask);
+    }
 }
